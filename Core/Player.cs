@@ -12,6 +12,8 @@ namespace Rftg
         internal Player(Ownable startTile)
         {
             Citizenry = new DieCollection();
+            Citizenry.Add(new Dice.Home());
+            Citizenry.Add(new Dice.Home());
             startTile.AddTo(this);
         }
 

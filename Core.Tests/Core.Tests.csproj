@@ -7,7 +7,7 @@
     <ProjectGuid>{D5814DE8-CB00-4DCE-8E86-6507D2AD62E4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Rftg.Core</RootNamespace>
+    <RootNamespace>Rftg</RootNamespace>
     <AssemblyName>Rftg.Core.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -36,7 +36,9 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Space_Piracy.cs" />
+    <Compile Include="DoNothingOwnable.cs" />
+    <Compile Include="Player_Tests.cs" />
+    <Compile Include="Space_Piracy_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

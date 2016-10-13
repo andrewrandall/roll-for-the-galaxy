@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Rftg
 {
     [TestClass]
-    public class Space_Piracy
+    public class Space_Piracy_Tests
     {
         [TestMethod]
         public void Adds_Red_Die_To_Citizenry_When_Taken()
@@ -16,8 +16,6 @@ namespace Rftg
             var player = new Player(new SpacePiracy());
 
             Assert.AreEqual(1, player.Citizenry.Count(d => d is Dice.Military));
-
-            // todo: Player starts with 2 white die in Citizenry
         }
     }
 }
