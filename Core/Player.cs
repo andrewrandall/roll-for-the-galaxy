@@ -14,9 +14,14 @@ namespace Rftg
             Citizenry = new DieCollection();
             Citizenry.Add(new Dice.Home());
             Citizenry.Add(new Dice.Home());
+            Cup = new DieCollection();
+            Cup.Add(new Dice.Home());
+            Cup.Add(new Dice.Home());
+            Cup.Add(new Dice.Home());
             startTile.AddTo(this);
         }
 
         public DieCollection Citizenry { get; private set; }
+        public DieCollection Cup { get; private set; }
     }
 }
