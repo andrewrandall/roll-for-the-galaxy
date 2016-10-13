@@ -20,5 +20,10 @@ namespace Rftg.Dice
         {
             dice.Add(die);
         }
+
+        internal void Remove(object die)
+        {
+            dice.Remove(die);
+        }
     }
 }

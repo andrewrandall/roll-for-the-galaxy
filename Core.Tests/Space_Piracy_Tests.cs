@@ -17,5 +17,67 @@ namespace Rftg
 
             Assert.AreEqual(1, player.Citizenry.Count(d => d is Dice.Military));
         }
+
+        [TestMethod]
+        public void Gains_Money_On_Ship_Phase_End_One_Red()
+        {
+            var tile = new SpacePiracy();
+            var player = new Player(tile);
+
+            tile.EndShipPhase();
+
+            Assert.AreEqual(2, player.Credits);
+        }
+
+        [TestMethod]
+        public void Gains_Money_On_Ship_Phase_End_Zero_Red()
+        {
+            var tile = new SpacePiracy();
+            var player = new Player(tile);
+            player.MoveToCup(player.Citizenry.First(d => d is Dice.Military));
+
+            tile.EndShipPhase();
+
+            Assert.AreEqual(1, player.Credits);
+        }
+
+        [TestMethod]
+        public void Gains_Money_On_Ship_Phase_End_Two_Red()
+        {
+            var tile = new SpacePiracy();
+            var player = new Player(tile);
+            player.Citizenry.Add(new Dice.Military());
+
+            tile.EndShipPhase();
+
+            Assert.AreEqual(2, player.Credits);
+        }
+
+        [TestMethod]
+        public void Gains_Money_On_Ship_Phase_End_Three_Red()
+        {
+            var tile = new SpacePiracy();
+            var player = new Player(tile);
+            player.Citizenry.Add(new Dice.Military());
+            player.Citizenry.Add(new Dice.Military());
+
+            tile.EndShipPhase();
+
+            Assert.AreEqual(3, player.Credits);
+        }
+
+        [TestMethod]
+        public void Gains_Money_On_Ship_Phase_End_Four_Red()
+        {
+            var tile = new SpacePiracy();
+            var player = new Player(tile);
+            player.Citizenry.Add(new Dice.Military());
+            player.Citizenry.Add(new Dice.Military());
+            player.Citizenry.Add(new Dice.Military());
+
+            tile.EndShipPhase();
+
+            Assert.AreEqual(3, player.Credits);
+        }
     }
 }

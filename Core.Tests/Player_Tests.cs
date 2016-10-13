@@ -27,5 +27,13 @@ namespace Rftg
             Assert.AreEqual(3, player.Cup.Count());
             Assert.IsTrue(player.Cup.All(d => d is Dice.Home));
         }
+
+        [TestMethod]
+        public void Starts_With_1_Credit()
+        {
+            var player = new Player(new DoNothingOwnable());
+
+            Assert.AreEqual(1, player.Credits);
+        }
     }
 }
