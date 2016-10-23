@@ -33,7 +33,12 @@ namespace Rftg
         public void Gain(Ownable tile)
         {
             Tableau.Add(tile);
-            tile.GainFor(this);
+
+            var gainPower = tile as GainPower;
+            if (gainPower != null)
+            {
+                gainPower.GainFor(this);
+            }
         }
 
         public void MoveToCup(object die)

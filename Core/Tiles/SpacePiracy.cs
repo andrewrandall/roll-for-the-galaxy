@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Rftg.Tiles
 {
-    class SpacePiracy : Ownable
+    class SpacePiracy : Ownable, GainPower
     {
         private Player owner;
 

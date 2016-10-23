@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Rftg.Tiles
 {
-    interface Ownable
+    interface GainPower
     {
-        int Cost { get; }
+        void GainFor(Player player);
     }
 }

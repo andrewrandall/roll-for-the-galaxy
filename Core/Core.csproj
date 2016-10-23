@@ -42,6 +42,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="Phases\StockPower.cs" />
     <Compile Include="Tiles\AlienArchaeology.cs" />
+    <Compile Include="Tiles\GainPower.cs" />
     <Compile Include="Tiles\Ownable.cs" />
     <Compile Include="Phases\Phase.cs" />
     <Compile Include="Phases\Ship.cs" />

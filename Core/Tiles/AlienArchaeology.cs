@@ -10,11 +10,6 @@ namespace Rftg.Tiles
     {
         public int Cost => 1;
 
-        public void GainFor(Player newOwner)
-        {
-            
-        }
-
         public void Execute(object die, Player player)
         {
             player.Credits += 2;

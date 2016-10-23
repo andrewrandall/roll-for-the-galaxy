@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Rftg.Tiles
 {
-    class HiddenFortress : Ownable
+    class HiddenFortress : Ownable, GainPower
     {
         public int Cost => 2;
 
