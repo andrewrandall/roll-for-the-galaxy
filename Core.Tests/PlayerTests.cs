@@ -13,13 +13,13 @@ namespace Rftg
     [TestClass]
     public class PlayerTests
     {
-        Game game;
+        MockGame game;
         Player player;
 
         [TestInitialize]
         public void BeforeEach()
         {
-            game = new Game();
+            game = new MockGame();
             player = new Player(game);
         }
 
@@ -75,6 +75,19 @@ namespace Rftg
             player.Stock(die);
 
             mockStockPower.Verify(x => x.Execute(die, player));
+        }
+
+        [TestMethod]
+        public void Scout_Gains_Tile_From_Bag()
+        {
+            var tile = new Mock<Ownable>();
+            game.SetBag(tile.Object);
+
+            var tiles = player.Scout(new object());
+
+            Assert.AreEqual(1, tiles.Count());
+            Assert.AreEqual(0, game.Bag.Count());
+            Assert.AreSame(tile.Object, tiles.Single());
         }
     }
 }

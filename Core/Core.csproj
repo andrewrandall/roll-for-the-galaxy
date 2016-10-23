@@ -35,6 +35,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bag.cs" />
     <Compile Include="Dice\AlienTechnology.cs" />
     <Compile Include="Dice\DieCollection.cs" />
     <Compile Include="Dice\Home.cs" />

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Moq;
+using Rftg.Tiles;
 
 namespace Rftg
 {
@@ -15,6 +17,11 @@ namespace Rftg
             {
                 new MockShip()
             };
+        }
+
+        internal void SetBag(params Ownable[] tiles)
+        {
+            Bag = new Bag(tiles);
         }
     }
 }

@@ -55,5 +55,10 @@ namespace Rftg
                 power.Execute(die, this);
             }
         }
+
+        internal IEnumerable<Ownable> Scout(object die)
+        {
+            return Game.Bag.DrawRandom(1).ToArray();
+        }
     }
 }

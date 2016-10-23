@@ -1,4 +1,5 @@
 ﻿using Rftg.Phases;
+using Rftg.Tiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,5 +19,7 @@ namespace Rftg
         }
 
         public IEnumerable<Phase> Phases { get; protected set; }
+
+        public Bag Bag { get; internal set; }
     }
 }
