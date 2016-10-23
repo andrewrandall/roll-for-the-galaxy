@@ -58,6 +58,7 @@ namespace Rftg
 
         internal IEnumerable<Ownable> Scout(object die, params Ownable[] discards)
         {
+            Game.AbandonedTiles.AddRange(discards);
             return Game.Bag.DrawRandom(discards.Length + 1).ToArray();
         }
     }

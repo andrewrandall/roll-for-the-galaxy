@@ -100,6 +100,7 @@ namespace Rftg
 
             Assert.AreEqual(4, tiles.Count());
             Assert.AreEqual(6, game.Bag.Count());
+            CollectionAssert.AreEquivalent(discards, game.AbandonedTiles);
         }
     }
 }

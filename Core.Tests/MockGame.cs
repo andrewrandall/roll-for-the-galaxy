@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Moq;
 using Rftg.Tiles;
+using System.Collections;
 
 namespace Rftg
 {
