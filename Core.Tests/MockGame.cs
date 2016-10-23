@@ -23,5 +23,10 @@ namespace Rftg
         {
             Bag = new Bag(tiles);
         }
+
+        internal void GenerateRandomBag(int v)
+        {
+            SetBag(Enumerable.Range(0, v).Select(x => new Mock<Ownable>().Object).ToArray());
+        }
     }
 }

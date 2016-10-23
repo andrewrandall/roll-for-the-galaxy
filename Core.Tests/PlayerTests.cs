@@ -89,5 +89,17 @@ namespace Rftg
             Assert.AreEqual(0, game.Bag.Count());
             Assert.AreSame(tile.Object, tiles.Single());
         }
+
+        [TestMethod]
+        public void Scout_Gains_Tiles_From_Bag_When_Discards()
+        {
+            game.GenerateRandomBag(10);
+            var discards = Enumerable.Range(0, 3).Select(x => new Mock<Ownable>().Object).ToArray();
+
+            var tiles = player.Scout(new object(), discards);
+
+            Assert.AreEqual(4, tiles.Count());
+            Assert.AreEqual(6, game.Bag.Count());
+        }
     }
 }

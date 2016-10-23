@@ -56,9 +56,9 @@ namespace Rftg
             }
         }
 
-        internal IEnumerable<Ownable> Scout(object die)
+        internal IEnumerable<Ownable> Scout(object die, params Ownable[] discards)
         {
-            return Game.Bag.DrawRandom(1).ToArray();
+            return Game.Bag.DrawRandom(discards.Length + 1).ToArray();
         }
     }
 }
