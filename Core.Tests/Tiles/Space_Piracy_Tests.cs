@@ -29,26 +29,6 @@ namespace Rftg.Tiles
         }
 
         [TestMethod]
-        public void Adds_Military_Die_To_Citizenry_When_Taken()
-        {
-            player.SetCitizenry();
-
-            tile.AddTo(player);
-
-            Assert.AreEqual(1, player.Citizenry.Count(d => d is Dice.Military));
-        }
-
-        [TestMethod]
-        public void Gains_Money_On_Ship_Phase_End_One_Military()
-        {
-            player.SetCitizenry(new Dice.Military());
-
-            shipPhase.End();
-
-            Assert.AreEqual(1, player.Credits - startingCredits);
-        }
-
-        [TestMethod]
         public void Gains_Money_On_Ship_Phase_End_Zero_Military()
         {
             player.SetCitizenry();

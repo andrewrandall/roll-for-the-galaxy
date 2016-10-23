@@ -14,8 +14,6 @@ namespace Rftg.Tiles
         public void AddTo(Player newOwner)
         {
             owner = newOwner;
-            newOwner.Citizenry.Add(new Dice.Military());
-
             newOwner.Game.Phases.Where(p => p is Ship).Single().Ending += ShipPhaseEnding;
         }
 

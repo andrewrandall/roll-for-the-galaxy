@@ -42,6 +42,7 @@
     <Compile Include="Phases\MockShip.cs" />
     <Compile Include="Player_Tests.cs" />
     <Compile Include="Round_Tests.cs" />
+    <Compile Include="Tiles\HiddenFortressTests.cs" />
     <Compile Include="Tiles\Space_Piracy_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
