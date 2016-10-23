@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Rftg
 {
     [TestClass]
-    public class Round_Tests
+    public class RoundTests
     {
         [TestMethod]
         public void Calls_Ship_End_When_Ship_Taken()

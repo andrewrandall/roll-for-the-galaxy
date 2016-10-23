@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Rftg
 {
     [TestClass]
-    public class Player_Tests
+    public class PlayerTests
     {
         Game game;
         Player player;

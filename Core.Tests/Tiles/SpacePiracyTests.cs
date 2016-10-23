@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Rftg.Tiles
 {
     [TestClass]
-    public class Space_Piracy_Tests
+    public class SpacePiracyTests
     {
         MockPlayer player;
         MockGame game;
