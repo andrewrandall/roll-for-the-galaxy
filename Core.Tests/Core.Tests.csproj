@@ -36,13 +36,13 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DoNothingOwnable.cs" />
+    <Compile Include="Tiles\DoNothingOwnable.cs" />
     <Compile Include="MockGame.cs" />
     <Compile Include="MockPlayer.cs" />
     <Compile Include="Phases\MockShip.cs" />
     <Compile Include="Player_Tests.cs" />
     <Compile Include="Round_Tests.cs" />
-    <Compile Include="Space_Piracy_Tests.cs" />
+    <Compile Include="Tiles\Space_Piracy_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

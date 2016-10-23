@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rftg
+namespace Rftg.Tiles
 {
     class SpacePiracy : Ownable
     {
