@@ -9,8 +9,9 @@ namespace Rftg
 {
     class Player
     {
-        internal Player(Ownable startTile)
+        internal Player(Game game, Ownable startTile)
         {
+            Game = game;
             Credits = 1;
             Citizenry = new DieCollection();
             Citizenry.Add(new Dice.Home());
@@ -22,9 +23,10 @@ namespace Rftg
             startTile.AddTo(this);
         }
 
+        public Game Game { get; protected set; }
         public int Credits { get; internal set; }
-        public DieCollection Citizenry { get; private set; }
-        public DieCollection Cup { get; private set; }
+        public DieCollection Citizenry { get; protected set; }
+        public DieCollection Cup { get; protected set; }
 
         internal void MoveToCup(object die)
         {

@@ -38,7 +38,10 @@
     <Compile Include="Dice\DieCollection.cs" />
     <Compile Include="Dice\Home.cs" />
     <Compile Include="Dice\Military.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Ownable.cs" />
+    <Compile Include="Phases\Phase.cs" />
+    <Compile Include="Phases\Ship.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpacePiracy.cs" />
