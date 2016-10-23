@@ -8,6 +8,8 @@ namespace Rftg.Tiles
 {
     class DoNothingOwnable : Ownable
     {
+        public int Cost => 0;
+
         public void AddTo(Player newOwner) { }
     }
 }

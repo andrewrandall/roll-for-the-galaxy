@@ -9,6 +9,8 @@ namespace Rftg.Tiles
 {
     class HiddenFortress : Ownable
     {
+        public int Cost => 2;
+
         public void AddTo(Player newOwner)
         {
             newOwner.Citizenry.Add(new Dice.Military());

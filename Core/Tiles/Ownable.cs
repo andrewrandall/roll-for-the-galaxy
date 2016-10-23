@@ -8,6 +8,7 @@ namespace Rftg.Tiles
 {
     interface Ownable
     {
+        int Cost { get; }
         void AddTo(Player newOwner);
     }
 }

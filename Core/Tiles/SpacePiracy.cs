@@ -11,6 +11,8 @@ namespace Rftg.Tiles
     {
         private Player owner;
 
+        public int Cost => 0;
+
         public void AddTo(Player newOwner)
         {
             owner = newOwner;
