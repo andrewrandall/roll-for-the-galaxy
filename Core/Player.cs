@@ -10,7 +10,7 @@ namespace Rftg
 {
     class Player
     {
-        internal Player(Game game, Ownable startTile)
+        internal Player(Game game)
         {
             Game = game;
             Credits = 1;
@@ -21,7 +21,6 @@ namespace Rftg
             Cup.Add(new Dice.Home());
             Cup.Add(new Dice.Home());
             Cup.Add(new Dice.Home());
-            startTile.AddTo(this);
         }
 
         public Game Game { get; protected set; }

@@ -18,7 +18,7 @@ namespace Rftg
         public void BeforeEach()
         {
             game = new Game();
-            player = new Player(game, new DoNothingOwnable());
+            player = new Player(game);
         }
 
         [TestMethod]

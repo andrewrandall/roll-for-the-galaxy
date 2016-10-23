@@ -11,7 +11,7 @@ namespace Rftg
     class MockPlayer : Player
     {
         public MockPlayer(MockGame game)
-            : base(game, new DoNothingOwnable())
+            : base(game)
         {
             Game = game;
             Credits = 0;
