@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rftg.Tiles
 {
-    interface Ownable
+    public interface Ownable
     {
         int Cost { get; }
     }

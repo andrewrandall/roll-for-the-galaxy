@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Moq;
+using Rftg.Phases;
 
 namespace Rftg
 {
@@ -49,6 +51,30 @@ namespace Rftg
             player.Stock(new object());
 
             Assert.AreEqual(2, player.Credits - startingCredits);
+        }
+
+        [TestMethod]
+        public void Gain_Executes_GainPower()
+        {
+            var mockTile = new Mock<Ownable>();
+            var mockGainPower = mockTile.As<GainPower>();
+
+            player.Gain(mockTile.Object);
+
+            mockGainPower.Verify(x => x.GainFor(player));
+        }
+
+        [TestMethod]
+        public void Stock_Executes_StockPowers()
+        {
+            var mockTile = new Mock<Ownable>();
+            var mockStockPower = mockTile.As<StockPower>();
+            player.Tableau.Add(mockTile.Object);
+            var die = new AlienArchaeology();
+
+            player.Stock(die);
+
+            mockStockPower.Verify(x => x.Execute(die, player));
         }
     }
 }

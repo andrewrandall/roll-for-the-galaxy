@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Rftg.Dice
 {
-    class DieCollection : IEnumerable<object>
+    public class DieCollection : IEnumerable<object>
     {
         private Collection<object> dice = new Collection<object>();
 
@@ -16,7 +16,7 @@ namespace Rftg.Dice
 
         IEnumerator IEnumerable.GetEnumerator() => dice.GetEnumerator();
 
-        public void Add(object die)
+        internal void Add(object die)
         {
             dice.Add(die);
         }

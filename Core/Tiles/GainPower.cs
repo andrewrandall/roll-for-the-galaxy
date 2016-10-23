@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rftg.Tiles
 {
-    interface GainPower
+    public interface GainPower
     {
         void GainFor(Player player);
     }

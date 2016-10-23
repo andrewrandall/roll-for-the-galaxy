@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rftg.Phases
 {
-    interface Phase
+    public interface Phase
     {
         event EventHandler<EventArgs> Ending;
     }

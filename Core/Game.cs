@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Rftg
 {
-    class Game
+    public class Game
     {
         public Game()
         {
-            Phases = new List<Phase>()
+            Phases = new []
             {
                 new Ship()
             };
         }
 
-        public List<Phase> Phases { get; protected set; }
+        public IEnumerable<Phase> Phases { get; protected set; }
     }
 }

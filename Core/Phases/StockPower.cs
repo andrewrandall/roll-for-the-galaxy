@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rftg.Phases
 {
-    interface StockPower
+    public interface StockPower
     {
         void Execute(object die, Player player);
     }

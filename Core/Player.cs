@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Rftg
 {
-    class Player
+    public class Player
     {
         internal Player(Game game)
         {
@@ -34,10 +34,9 @@ namespace Rftg
         {
             Tableau.Add(tile);
 
-            var gainPower = tile as GainPower;
-            if (gainPower != null)
+            if (tile is GainPower)
             {
-                gainPower.GainFor(this);
+                ((GainPower)tile).GainFor(this);
             }
         }
 
