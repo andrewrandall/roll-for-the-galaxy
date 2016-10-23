@@ -40,5 +40,15 @@ namespace Rftg
         {
             Assert.AreEqual(1, player.Credits);
         }
+
+        [TestMethod]
+        public void Stock_Takes_Two_Credits()
+        {
+            var startingCredits = player.Credits;
+
+            player.Stock();
+
+            Assert.AreEqual(2, player.Credits - startingCredits);
+        }
     }
 }

@@ -33,5 +33,10 @@ namespace Rftg
             Citizenry.Remove(die);
             Cup.Add(die);
         }
+
+        internal void Stock()
+        {
+            Credits += 2;
+        }
     }
 }
