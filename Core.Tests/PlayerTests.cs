@@ -46,7 +46,7 @@ namespace Rftg
         {
             var startingCredits = player.Credits;
 
-            player.Stock();
+            player.Stock(new object());
 
             Assert.AreEqual(2, player.Credits - startingCredits);
         }

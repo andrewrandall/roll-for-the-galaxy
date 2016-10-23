@@ -13,7 +13,7 @@ namespace Rftg.Tiles
 
         public int Cost => 0;
 
-        public void AddTo(Player newOwner)
+        public void GainFor(Player newOwner)
         {
             owner = newOwner;
             newOwner.Game.Phases.Where(p => p is Ship).Single().Ending += ShipPhaseEnding;

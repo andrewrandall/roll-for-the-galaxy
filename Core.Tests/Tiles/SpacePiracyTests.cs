@@ -24,7 +24,7 @@ namespace Rftg.Tiles
             game = new MockGame();
             shipPhase = (MockShip)game.Phases.Single(p => p is MockShip);
             player = new MockPlayer(game);
-            tile.AddTo(player);
+            tile.GainFor(player);
             startingCredits = player.Credits;
         }
 

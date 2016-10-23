@@ -35,10 +35,13 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dice\AlienTechnology.cs" />
     <Compile Include="Dice\DieCollection.cs" />
     <Compile Include="Dice\Home.cs" />
     <Compile Include="Dice\Military.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Phases\StockPower.cs" />
+    <Compile Include="Tiles\AlienArchaeology.cs" />
     <Compile Include="Tiles\Ownable.cs" />
     <Compile Include="Phases\Phase.cs" />
     <Compile Include="Phases\Ship.cs" />
@@ -46,6 +49,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tiles\HiddenFortress.cs" />
     <Compile Include="Tiles\SpacePiracy.cs" />
+    <Compile Include="Tiles\TileCollection.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

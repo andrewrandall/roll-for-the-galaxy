@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rftg.Tiles
+namespace Rftg.Dice
 {
-    interface Ownable
+    class AlienTechnology
     {
-        int Cost { get; }
-        void GainFor(Player newOwner);
     }
 }

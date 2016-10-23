@@ -10,6 +10,6 @@ namespace Rftg.Tiles
     {
         public int Cost => 0;
 
-        public void AddTo(Player newOwner) { }
+        public void GainFor(Player newOwner) { }
     }
 }

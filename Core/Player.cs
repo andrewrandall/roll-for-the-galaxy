@@ -21,22 +21,35 @@ namespace Rftg
             Cup.Add(new Dice.Home());
             Cup.Add(new Dice.Home());
             Cup.Add(new Dice.Home());
+            Tableau = new TileCollection();
         }
 
         public Game Game { get; protected set; }
         public int Credits { get; internal set; }
         public DieCollection Citizenry { get; protected set; }
         public DieCollection Cup { get; protected set; }
+        public TileCollection Tableau { get; protected set; }
 
-        internal void MoveToCup(object die)
+        public void Gain(Ownable tile)
+        {
+            Tableau.Add(tile);
+            tile.GainFor(this);
+        }
+
+        public void MoveToCup(object die)
         {
             Citizenry.Remove(die);
             Cup.Add(die);
         }
 
-        internal void Stock()
+        public void Stock(object die)
         {
             Credits += 2;
+
+            foreach (var power in Tableau.GetPowers<Phases.StockPower>())
+            {
+                power.Execute(die, this);
+            }
         }
     }
 }

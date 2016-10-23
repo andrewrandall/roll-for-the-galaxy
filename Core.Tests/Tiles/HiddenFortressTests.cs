@@ -29,7 +29,7 @@ namespace Rftg.Tiles
             player.SetCitizenry();
             var startCount = CountMilitary();
 
-            tile.AddTo(player);
+            tile.GainFor(player);
 
             Assert.AreEqual(1, CountMilitary() - startCount);
         }

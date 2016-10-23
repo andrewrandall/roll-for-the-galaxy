@@ -11,7 +11,7 @@ namespace Rftg.Tiles
     {
         public int Cost => 2;
 
-        public void AddTo(Player newOwner)
+        public void GainFor(Player newOwner)
         {
             newOwner.Citizenry.Add(new Dice.Military());
         }

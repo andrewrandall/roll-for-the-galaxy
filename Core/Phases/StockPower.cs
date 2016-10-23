@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rftg.Tiles
+namespace Rftg.Phases
 {
-    interface Ownable
+    interface StockPower
     {
-        int Cost { get; }
-        void GainFor(Player newOwner);
+        void Execute(object die, Player player);
     }
 }
