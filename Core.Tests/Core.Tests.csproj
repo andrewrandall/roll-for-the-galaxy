@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="Tiles\AlienArchaeologyTests.cs" />
     <Compile Include="Tiles\AlienRosettaStoneWorldTests.cs" />
-    <Compile Include="Tiles\DoNothingOwnable.cs" />
     <Compile Include="MockGame.cs" />
     <Compile Include="MockPlayer.cs" />
     <Compile Include="Phases\MockShip.cs" />
