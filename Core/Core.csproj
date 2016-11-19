@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bag.cs" />
+    <Compile Include="ConstructionQueue.cs" />
     <Compile Include="Dice\AlienTechnology.cs" />
     <Compile Include="Dice\DieCollection.cs" />
     <Compile Include="Dice\Home.cs" />
@@ -44,6 +45,7 @@
     <Compile Include="Phases\StockPower.cs" />
     <Compile Include="Tiles\AlienArchaeology.cs" />
     <Compile Include="Tiles\AlienRosettaStoneWorld.cs" />
+    <Compile Include="Tiles\Development.cs" />
     <Compile Include="Tiles\GainPower.cs" />
     <Compile Include="Tiles\Ownable.cs" />
     <Compile Include="Phases\Phase.cs" />

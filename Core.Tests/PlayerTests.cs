@@ -102,5 +102,92 @@ namespace Rftg
             Assert.AreEqual(6, game.Bag.Count());
             CollectionAssert.AreEquivalent(discards, game.AbandonedTiles);
         }
+
+        [TestMethod]
+        public void Develop_Stores_Developer()
+        {
+            var development = new Mock<Development>();
+            development.Setup(d => d.Cost).Returns(10);
+            player.ConstructionQueue.Developments.Add(development.Object);
+            var die = new object();
+
+            player.Develop(die);
+
+            Assert.IsTrue(player.ConstructionQueue.Developers.Contains(die));
+        }
+
+        [TestMethod]
+        public void Develop_Starts_Empty()
+        {
+            Assert.AreEqual(0, player.ConstructionQueue.Developers.Count());
+        }
+
+        // todo: split up assertions below
+
+        [TestMethod]
+        public void Develop_Finishes_Building_1()
+        {
+            var development = new Mock<Development>();
+            development.Setup(d => d.Cost).Returns(1);
+            player.ConstructionQueue.Developments.Add(development.Object);
+            var die = new object();
+
+            player.Develop(die);
+
+            Assert.IsTrue(player.Tableau.Contains(development.Object), "Built Tile");
+            Assert.IsFalse(player.ConstructionQueue.Developments.Contains(development.Object), "Moves Tile from Queue");
+            Assert.IsTrue(player.Cup.Contains(die), "Moved die to cup");
+            Assert.IsFalse(player.ConstructionQueue.Developers.Contains(die), "Doesn't store developer");
+        }
+
+        [TestMethod]
+        public void Develop_Finishes_Building_2()
+        {
+            var development = new Mock<Development>();
+            development.Setup(d => d.Cost).Returns(2);
+            player.ConstructionQueue.Developments.Add(development.Object);
+            var dice = Enumerable.Range(0, 2).Select(x => new object()).ToArray();
+
+            player.Develop(dice);
+
+            Assert.IsTrue(player.Tableau.Contains(development.Object), "Built Tile");
+            Assert.IsFalse(player.ConstructionQueue.Developments.Contains(development.Object), "Moves Tile from Queue");
+            Assert.IsTrue(dice.All(d => player.Cup.Contains(d)), "Moved die to cup");
+            Assert.IsFalse(dice.Any(d => player.ConstructionQueue.Developers.Contains(d)), "Doesn't store developer");
+        }
+
+        [TestMethod]
+        public void Develop_DoesNotFinish_Building_2()
+        {
+            var development = new Mock<Development>();
+            development.Setup(d => d.Cost).Returns(2);
+            player.ConstructionQueue.Developments.Add(development.Object);
+            var die = new object();
+
+            player.Develop(die);
+
+            Assert.IsTrue(player.ConstructionQueue.Developments.Contains(development.Object), "Leaves tile in Queue");
+            Assert.IsFalse(player.Tableau.Contains(development.Object), "Does not build tile");
+            Assert.IsTrue(player.ConstructionQueue.Developers.Contains(die), "Stores developer");
+            Assert.IsFalse(player.Cup.Contains(die), "Does not move developer to cup");
+        }
+
+        [TestMethod]
+        public void Develop_Finishes_Two_Buildings()
+        {
+            var developments = Enumerable.Range(0, 2).Select(i => new MockDevelopment() { Cost = 1 }).ToArray();
+            foreach (var development in developments)
+            {
+                player.ConstructionQueue.Developments.Add(development);
+            }
+            var dice = Enumerable.Range(0, 2).Select(i => new object()).ToArray();
+
+            player.Develop(dice);
+
+            Assert.IsTrue(developments.All(d => player.Tableau.Contains(d)), "Built tiles");
+            Assert.IsFalse(developments.Any(d => player.ConstructionQueue.Developments.Contains(d)), "Dequeued tiles");
+            Assert.IsTrue(dice.All(d => player.Cup.Contains(d)), "Dice moved to cup");
+            Assert.IsFalse(dice.Any(d => player.ConstructionQueue.Developers.Contains(d)), "Dice moved to cup");
+        }
     }
 }

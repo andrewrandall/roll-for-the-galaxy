@@ -44,6 +44,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tiles\MockDevelopment.cs" />
     <Compile Include="Tiles\AlienArchaeologyTests.cs" />
     <Compile Include="Tiles\AlienRosettaStoneWorldTests.cs" />
     <Compile Include="MockGame.cs" />

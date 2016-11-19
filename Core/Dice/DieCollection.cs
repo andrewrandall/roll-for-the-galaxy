@@ -10,7 +10,7 @@ namespace Rftg.Dice
 {
     public class DieCollection : IEnumerable<object>
     {
-        private Collection<object> dice = new Collection<object>();
+        private List<object> dice = new List<object>();
 
         public IEnumerator<object> GetEnumerator() => dice.GetEnumerator();
 
@@ -24,6 +24,16 @@ namespace Rftg.Dice
         internal void Remove(object die)
         {
             dice.Remove(die);
+        }
+
+        internal void AddRange(DieCollection developers)
+        {
+            dice.AddRange(developers);
+        }
+
+        internal void Clear()
+        {
+            dice.Clear();
         }
     }
 }

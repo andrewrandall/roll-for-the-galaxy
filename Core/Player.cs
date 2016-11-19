@@ -22,6 +22,7 @@ namespace Rftg
             Cup.Add(new Dice.Home());
             Cup.Add(new Dice.Home());
             Tableau = new TileCollection();
+            ConstructionQueue = new ConstructionQueue();
         }
 
         public Game Game { get; protected set; }
@@ -29,6 +30,7 @@ namespace Rftg
         public DieCollection Citizenry { get; protected set; }
         public DieCollection Cup { get; protected set; }
         public TileCollection Tableau { get; protected set; }
+        public ConstructionQueue ConstructionQueue { get; internal set; }
 
         public void Gain(Ownable tile)
         {
@@ -60,6 +62,21 @@ namespace Rftg
         {
             Game.AbandonedTiles.AddRange(discards);
             return Game.Bag.DrawRandom(discards.Length + 1).ToArray();
+        }
+
+        internal void Develop(params object[] dice)
+        {
+            foreach (var die in dice)
+            {
+                ConstructionQueue.Developers.Add(die);
+
+                if (ConstructionQueue.Developers.Count() >= ConstructionQueue.Developments.Peek().Cost)
+                {
+                    Tableau.Add(ConstructionQueue.Developments.Pop());
+                    Cup.AddRange(ConstructionQueue.Developers);
+                    ConstructionQueue.Developers.Clear();
+                }
+            }
         }
     }
 }
